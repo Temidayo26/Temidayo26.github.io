@@ -182,6 +182,26 @@ body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;o
 .contact::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:var(--accent);filter:blur(110px);opacity:.35;top:-160px;right:-120px}
 .contact > *{position:relative}
 .contact .eyebrow{color:var(--gold);opacity:1}
+.ai-panel{background:#16181d;color:#ece8e1;border-radius:32px;padding:64px 56px;position:relative;overflow:hidden}
+.ai-panel::before{content:"";position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,#4d4a86,transparent 65%);opacity:.55;top:-220px;right:-160px}
+.ai-panel::after{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px);background-size:36px 36px;pointer-events:none}
+.ai-panel > *{position:relative;z-index:1}
+.ai-panel .head p{color:#b6b0a6}
+.ai-panel .eyebrow{color:#e08a5f}
+.ai-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.ai-item{border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.03);border-radius:20px;padding:24px;transition:border-color .3s,transform .3s}
+.ai-item:hover{border-color:#e08a5f;transform:translateY(-4px)}
+.ai-item .num{font-family:Fraunces,serif;color:#c9a24a;font-size:1.1rem}
+.ai-item h3{font-size:1.15rem;margin:10px 0 8px}
+.ai-item p{color:#b6b0a6;font-size:.92rem}
+.ai-foot{display:grid;grid-template-columns:1.1fr 1fr;gap:40px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,.1)}
+.ai-foot h4{font-size:.8rem;text-transform:uppercase;letter-spacing:.12em;color:#8f8a82;margin-bottom:14px;font-weight:600}
+.ai-panel .chips span{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#ece8e1}
+.certs{list-style:none;display:grid;gap:10px}
+.certs li{display:flex;justify-content:space-between;gap:12px;padding-bottom:10px;border-bottom:1px dashed rgba(255,255,255,.1);font-size:.92rem}
+.certs li span{color:#8f8a82;white-space:nowrap;font-size:.85rem}
+@media(max-width:900px){.ai-grid{grid-template-columns:1fr 1fr}.ai-foot{grid-template-columns:1fr}}
+@media(max-width:600px){.ai-grid{grid-template-columns:1fr}.ai-panel{padding:44px 22px}.certs li{flex-direction:column;gap:2px}}
 nav .hire{padding:9px 18px;border-radius:999px;background:var(--ink);color:var(--bg)!important;font-weight:600}
 @media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.blob,.spin svg,.marquee .track{animation:none}}
 </style>
@@ -193,6 +213,7 @@ nav .hire{padding:9px 18px;border-radius:999px;background:var(--ink);color:var(-
     <a class="logo" href="#top">Temidayo<span>.</span></a>
     <ul>
       <li><a href="#services">Services</a></li>
+      <li><a href="#ai">AI</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#experience">Experience</a></li>
       <li><a class="hire" href="#contact">Hire me</a></li>
@@ -271,6 +292,42 @@ nav .hire{padding:9px 18px;border-radius:999px;background:var(--ink);color:var(-
   </div>
 </section>
 
+<section id="ai" style="padding-top:0">
+  <div class="wrap">
+    <div class="ai-panel reveal">
+      <div class="head" style="margin-bottom:40px">
+        <div class="eyebrow">AI training &amp; evaluation</div>
+        <h2>Making AI models more accurate and safer to use.</h2>
+        <p>Since 2019 I've worked on the human side of AI. I write the prompts and edge cases that test large language models, rate and rewrite their answers against client rubrics, and label video, audio and image data. Right now I do this for Turing and micro1.</p>
+      </div>
+      <div class="ai-grid">
+        <div class="ai-item"><span class="num">01</span><h3>LLM evaluation &amp; RLHF</h3><p>Rating and ranking model responses, rubric-based scoring, writing SFT data, and spotting edge cases for quality benchmarks.</p></div>
+        <div class="ai-item"><span class="num">02</span><h3>Adversarial &amp; safety testing</h3><p>Designing prompts and scenarios that make models fail, then explaining each failure in structured written feedback, including in JSON.</p></div>
+        <div class="ai-item"><span class="num">03</span><h3>Video &amp; audio annotation</h3><p>Frame-by-frame object tracking, action recognition, temporal segmentation, and time-stamped transcription for speech-recognition (ASR) training.</p></div>
+        <div class="ai-item"><span class="num">04</span><h3>Quality control</h3><p>Reviewing other annotators' batches, correcting mislabels, measuring inter-annotator agreement, and building error taxonomies.</p></div>
+      </div>
+      <div class="ai-foot">
+        <div>
+          <h4>Tools &amp; platforms</h4>
+          <div class="chips"><span>CVAT</span><span>Labelbox</span><span>Label Studio</span><span>SuperAnnotate</span><span>Supervisely</span><span>Roboflow</span><span>VGG Annotator</span><span>Scale AI</span><span>Appen</span><span>Lionbridge</span><span>Mercor</span><span>Audacity</span><span>Descript</span><span>Sonix</span><span>Speechmatics</span></div>
+        </div>
+        <div>
+          <h4>Certifications</h4>
+          <ul class="certs">
+            <li><b>Video QC Analyst</b><span>Turing University · 2025</span></li>
+            <li><b>Quality Control in AI Datasets</b><span>Lionbridge · 2025</span></li>
+            <li><b>Data Annotator Generalist</b><span>Micro1 · 2025</span></li>
+            <li><b>Data Labelling &amp; Annotation for AI Development</b><span>CipherSense × Datalens · 2026</span></li>
+            <li><b>Data Labeling Job Simulation</b><span>Forage · 2026</span></li>
+            <li><b>LLM for AI Training</b><span>Coursera · 2020</span></li>
+            <li><b>Technical &amp; Creative Writer</b><span>RWS Academy · 2019</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="work" style="padding-top:0">
   <div class="wrap">
     <div class="head reveal">
@@ -307,14 +364,14 @@ nav .hire{padding:9px 18px;border-radius:999px;background:var(--ink);color:var(-
         <h2>Where I've worked.</h2>
       </div>
       <div class="timeline">
-        <div class="job reveal"><div class="when">Dec 2025 – Present</div><h3>Remote AI Training Specialist</h3><div class="org">micro1</div><ul><li>Video, image and audio annotation (CVAT, Labelbox) and RLHF/SFT evaluations for leading AI labs.</li><li>Structured, rubric-based feedback written for accuracy and consistency.</li></ul></div>
-        <div class="job reveal"><div class="when">Jun 2025 – Present</div><h3>Remote Creative Writer (AI Training)</h3><div class="org">Turing</div><ul><li>Write prompts, test scenarios and adversarial examples that train and stress-test large language models.</li></ul></div>
+        <div class="job reveal"><div class="when">Dec 2025 – Present</div><h3>Remote AI Training Specialist</h3><div class="org">micro1</div><ul><li>Production-scale video, audio and image annotation (CVAT, Labelbox) and RLHF/SFT evaluations for major technology companies, including Facebook.</li><li>Frame-by-frame tracking, action recognition and time-stamped transcription, with concise structured feedback.</li><li>Adapt quickly to new tools, guidelines and fast-changing project workflows.</li></ul></div>
+        <div class="job reveal"><div class="when">Jun 2025 – Present</div><h3>Remote Creative Writer (AI Training)</h3><div class="org">Turing</div><ul><li>Write prompts, test scenarios and adversarial examples that train and stress-test large language models.</li><li>Rate and rewrite model responses for accuracy, clarity, tone and context, and feed real-world knowledge into training pipelines.</li><li>Manage several writing and evaluation projects at once for distributed client teams.</li></ul></div>
         <div class="job reveal"><div class="when">Jan 2023 – Present</div><h3>UI Designer & WordPress Developer</h3><div class="org">Upwork · Freelance</div><ul><li>Design web and mobile interfaces in Figma for clients in tech, business, education and finance.</li><li>Build onboarding flows and reusable components, then hand off to developers or build in WordPress.</li></ul></div>
         <div class="job reveal"><div class="when">Sep 2023 – Dec 2023</div><h3>Geophysicist / Field Assistant (Groundwater Exploration)</h3><div class="org">Damico community, Ile-Ife · with Dr. A. G. Oni</div><ul><li>Groundwater exploration for Damico, a hilly community in Ile-Ife with very shallow overburden and little water.</li><li>Ran a magnetic survey over a large area and interpreted the data to select target zones, then mapped subsurface structures and fractures with 2D dipole-dipole resistivity imaging and selected points for vertical electrical sounding (VES).</li><li>Identified around 50 water-bearing fracture zones. Boreholes drilled on them all produced good water, and boreholes were shared between neighbouring houses where needed.</li></ul></div>
         <div class="job reveal"><div class="when">Jul 2021 – Aug 2023</div><h3>Graphic Designer (Senior Designer)</h3><div class="org">Dexel Designs Pty Ltd · Remote</div><ul><li>Led design direction on a distributed team and delivered brand and interaction design for clients.</li></ul></div>
         <div class="job reveal"><div class="when">Jun 2022 – Jul 2022</div><h3>Field Assistant (Geological Mapping &amp; Geophysical Survey)</h3><div class="org">Department of Geology, Obafemi Awolowo University</div><ul><li><strong>Month 1, geological mapping:</strong> identified and described rock outcrops around Ile-Ife, measured strikes and dips, and helped produce a geological map of the area.</li><li><strong>Month 2, geophysical survey:</strong> used electrical resistivity (terrameter) with Schlumberger VES and 2D dipole-dipole imaging, alongside seismic methods, to delineate lithological boundaries, structures, fractures and trends, and to identify groundwater aquifers.</li></ul></div>
         <div class="job reveal"><div class="when">Jan 2021 – Jul 2022</div><h3>Academic & Research Writer</h3><div class="org">Self-employed</div><ul><li>Research, reports and proposals for clients at UK universities, with analysis in SPSS and NVivo.</li><li>Edited and proofread manuscripts to APA, MLA and Harvard standards.</li></ul></div>
-        <div class="job reveal" style="padding-bottom:0"><div class="when">Jan 2019 – Jan 2021</div><h3>AI Data Annotator</h3><div class="org">RWS</div><ul><li>Data annotation, task summaries and rubric-based feedback for global AI projects.</li></ul></div>
+        <div class="job reveal" style="padding-bottom:0"><div class="when">Jan 2019 – Jan 2021</div><h3>AI Data Annotator</h3><div class="org">RWS</div><ul><li>Labelled image, audio and video data and applied client rubrics with RLHF/SFT methods for global AI projects.</li><li>Worked with AI/ML engineers to align annotation standards with model training requirements, and flagged edge cases for quality benchmarks.</li></ul></div>
       </div>
     </div>
     <div>
@@ -324,7 +381,7 @@ nav .hire{padding:9px 18px;border-radius:999px;background:var(--ink);color:var(-
       </div>
       <div class="skillgroup reveal"><h4>Design</h4><div class="chips"><span>Figma</span><span>Auto-layout & variables</span><span>Prototyping</span><span>Design systems</span><span>Responsive design</span><span>Typography & colour</span><span>Photoshop</span><span>Illustrator</span><span>WordPress</span></div></div>
       <div class="skillgroup reveal"><h4>Writing</h4><div class="chips"><span>SEO content</span><span>Long-form & branded</span><span>Research & fact-checking</span><span>Editing & proofreading</span><span>UI microcopy</span><span>APA · MLA · Harvard</span></div></div>
-      <div class="skillgroup reveal"><h4>AI & Data</h4><div class="chips"><span>RLHF / SFT evaluation</span><span>Prompt writing</span><span>Adversarial testing</span><span>CVAT</span><span>Labelbox</span><span>SPSS</span><span>NVivo</span></div></div>
+      <div class="skillgroup reveal"><h4>AI & Data</h4><div class="chips"><span>RLHF / SFT evaluation</span><span>Prompt writing</span><span>Red-teaming</span><span>Video &amp; audio annotation</span><span>ASR transcription</span><span>Inter-annotator agreement</span><span>CVAT</span><span>Labelbox</span><span>SPSS</span><span>NVivo</span></div></div>
       <div class="skillgroup reveal"><h4>Research & Field</h4><div class="chips"><span>Electrical resistivity (VES, ERT)</span><span>Res2Dinv</span><span>WinResist</span><span>Surfer</span><span>Survey design</span></div></div>
       <div class="edu reveal">
         <div class="eyebrow">Education</div>
